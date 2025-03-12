@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
+import withSvgr from "next-plugin-svgr";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const withVanillaExtract = createVanillaExtractPlugin();
+const withNextIntl = createNextIntlPlugin("./src/lib/getI18nRequestConfig.ts");
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withNextIntl(withVanillaExtract(withSvgr(nextConfig)));
