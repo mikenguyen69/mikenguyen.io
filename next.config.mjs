@@ -1,5 +1,4 @@
 import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
-// @ts-ignore
 import withSvgr from "next-plugin-svgr";
 import createNextIntlPlugin from "next-intl/plugin";
 const withVanillaExtract = createVanillaExtractPlugin();
